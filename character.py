@@ -7,6 +7,7 @@ class Character:
         pass
 
     def eat(self):
+        print("test")
         pass
 
     def get_coins(self):
