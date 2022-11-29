@@ -4,7 +4,7 @@ class Character:
         self.coin_level = coin_level
 
     def move(self):
-        pass
+        ...
 
     def eat(self):
         print("test")
