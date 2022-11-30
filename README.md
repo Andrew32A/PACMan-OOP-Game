@@ -4,7 +4,16 @@
 
 </div>
 
-## About the Project:
+## Info
+
+|       |                                                                                                                                                                                                     |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| About | PAC Man OOP Game is a python game that incorporate Object-oriented programming principles to create classes to create characters and coins to create a game.                                                                                   |
+| Team  | [Louisa Goncharenko](https://github.com/lougoncharenko), [Andrew Alsing](https://github.com/Andrew32A)
+| Goal  | Develop a robust python game application using an Object Oriented Programming Principles.                                                                                                               |
+|       |                                                                                                                                                                                                     |
+
+
 
 
 ### File Structure
