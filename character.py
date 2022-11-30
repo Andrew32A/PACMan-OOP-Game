@@ -28,7 +28,7 @@ class Character:
         """
         might be a little redundant since get_coins returns coin amount
         """
-        return self.coin_level
+        print(self.coin_level)
 
 
 
