@@ -25,5 +25,9 @@ Pacman/
 ├── main.py        # File that runs the flask server to create routes and run applications 
 ```
 
-<br>
-<br>
+## Features
+
+## Challenges and Learnings
+
+## Improvements for the game
+
