@@ -2,7 +2,7 @@
 
 # PAC-MAN: OOP Game
   
- ![Unknown](https://user-images.githubusercontent.com/93098869/204936123-38d2f268-ac89-4d33-9075-a67642d4e382.png)
+![30-huge-maze-pacman](https://user-images.githubusercontent.com/93098869/204936248-8a9a3fd9-1c63-45b2-a34f-808350ed6ab4.gif)
 
 </div>
 
