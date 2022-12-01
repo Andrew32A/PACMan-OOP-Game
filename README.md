@@ -20,9 +20,11 @@
 
 ```sh
 Pacman/
-├── static         # Directory for Styling page
-├── templates # Directory for reusable HTML templates
-├── main.py        # File that runs the flask server to create routes and run applications 
+├── character.py         # Character class: Parent class
+├── pacman.py # Pacman class that inherits from parent
+├── ghost.py # Ghost class that inherits from parent
+├── coin.py # Coin class that is passed into other classes to increase coin levels.
+├── main.py        # Main File that runs the game
 ```
 
 ## Features
