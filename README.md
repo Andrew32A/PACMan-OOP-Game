@@ -1,6 +1,8 @@
 <div align="center">
 
 # PAC-MAN: OOP Game
+  
+ ![Unknown](https://user-images.githubusercontent.com/93098869/204936123-38d2f268-ac89-4d33-9075-a67642d4e382.png)
 
 </div>
 
