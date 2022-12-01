@@ -42,7 +42,12 @@ Pacman/
 - Ghosts have a visibility method that changes there visibility on the board for visual effects.
 
 
-## Challenges and Learnings
+## Learnings
+- created classes
+- used single-class inheritance
+- used a super method to inherit attributes from parent classes
+- generated a random amount of coins for each characters
 
 ## Improvements for the game
-
+- Using Pygame library to draw character and the grid
+- Creating buttons to start and pause the game
