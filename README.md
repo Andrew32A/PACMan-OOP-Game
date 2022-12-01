@@ -28,6 +28,7 @@ Pacman/
 ```
 
 <div align="center">
+  
 ## Diagram of Class Inheritance 
 
 <img width="1009" alt="Screen Shot 2022-11-30 at 6 53 45 PM" src="https://user-images.githubusercontent.com/93098869/204934501-31016072-395e-4b98-9fe2-2f8356a856d1.png">
