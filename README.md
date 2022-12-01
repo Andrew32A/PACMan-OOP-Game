@@ -35,6 +35,12 @@ Pacman/
 </div>
 
 ## Features
+- Each character (both ghosts and Pacmans) have the ability to move on a grid using (x,y) coordinates
+- Each character has an eat method where if they bummp into one another, the character with the highest coin level eats the other character.
+- Ghosts are given a color attribute and a mood for visual effects.
+- Each character is able to add or lose coins based on class methods.
+- Ghosts have a visibility method that changes there visibility on the board for visual effects.
+
 
 ## Challenges and Learnings
 
