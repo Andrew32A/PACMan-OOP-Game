@@ -3,6 +3,7 @@ from coin import Coins
 from ghost import Ghost
 from pacman import Pacman
 import os
+import random
 
 os.system("clear") # clears terminal upon execution
 gameBoard = []
@@ -27,10 +28,9 @@ o = coin
 m = ghosts
 """
 
-
-
 # instantiate objects
 pac = Pacman("Pacman", "male", 70, "<", 0)
+blinky = Ghost("Blinky", "angry", 2, "red", random.randint(21, 40), "m", 0)
 
 
 
@@ -43,6 +43,7 @@ while True:
 
     # place objects on gameboard
     gameBoard[pac.position] = pac.sprite # pacman displayed on board
+    gameBoard[blinky.position] = blinky.sprite # blinky displayed on board
 
     # displays board
     gameBoardDisplay = ''.join(gameBoard) # removes brackets and commas
@@ -57,8 +58,10 @@ while True:
     # user input, add w and s for up and down to jump levels later
     directionalInput = input("Input [w] = up, [s] = down, [a] = left, [d] = right: ").lower()
     if directionalInput == "a":
+        pac.sprite = ">"
         pac.position -= 1
     elif directionalInput == "d":
+        pac.sprite = "<"
         pac.position += 1
     elif directionalInput == "w":
         pac.position -= 20

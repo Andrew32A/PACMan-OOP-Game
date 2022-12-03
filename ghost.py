@@ -1,8 +1,8 @@
 from character import Character
 
-class Ghost(Character):
+class Ghost():
     def __init__(self, name, mood, speed, color, position, sprite, coin_level=0):
-        super().__init__(name, coin_level, speed)
+        # super().__init__(name, coin_level, speed) # removed inherit for now
         self.mood = mood
         self.speed = speed
         self.color = color
