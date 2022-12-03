@@ -1,11 +1,13 @@
 from character import Character
 
 class Ghost(Character):
-    def __init__(self, name, mood, speed, color, coin_level=0):
+    def __init__(self, name, mood, speed, color, position, sprite, coin_level=0):
         super().__init__(name, coin_level, speed)
         self.mood = mood
         self.speed = speed
         self.color = color
+        self.position = position
+        self.sprite = sprite
 
     def mood_behaviour(self):
         '''

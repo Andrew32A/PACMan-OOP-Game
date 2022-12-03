@@ -27,16 +27,23 @@ o = coin
 m = ghosts
 """
 
-def createBoard():
-    for i in range (0, 140, 1):
-        gameBoard.insert(i, "-")
-    
-    gameBoard[70] = "<" # placeholder for pacman creation here
 
-createBoard()
+
+# instantiate objects
+pac = Pacman("Pacman", "male", 70, "<", 0)
+
+
+
 
 # game loop
 while True:
+    # fills board with - before being updated with object placement
+    for i in range (0, 140, 1):
+        gameBoard.insert(i, "-")
+
+    # place objects on gameboard
+    gameBoard[pac.position] = pac.sprite # pacman displayed on board
+
     # displays board
     gameBoardDisplay = ''.join(gameBoard) # removes brackets and commas
     print(gameBoardDisplay[1:20])
@@ -48,13 +55,18 @@ while True:
     print(gameBoardDisplay[121:140])
 
     # user input, add w and s for up and down to jump levels later
-    directionalInput = input("Input [a] to go left and [d] to go right: ")
+    directionalInput = input("Input [w] = up, [s] = down, [a] = left, [d] = right: ").lower()
     if directionalInput == "a":
-        ...
+        pac.position -= 1
     elif directionalInput == "d":
-        ...
+        pac.position += 1
+    elif directionalInput == "w":
+        pac.position -= 20
+    elif directionalInput == "s":
+        pac.position +=20
+    
     else:
-        print("Please input either [a] or [d]")
+        print("Please enter a valid input")
 
     os.system("clear")
 
