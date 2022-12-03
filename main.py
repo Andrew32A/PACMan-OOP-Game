@@ -5,6 +5,13 @@ from pacman import Pacman
 import os
 import random
 
+# colors
+OKBLUE = '\033[94m'
+OKCYAN = '\033[96m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+ENDC = '\033[0m'
+
 os.system("clear") # clears terminal upon execution
 gameBoard = []
 score = 0
@@ -32,7 +39,9 @@ m = ghosts
 
 # instantiate objects
 pac = Pacman("Pacman", "male", 70, "<", 0) # pacman
-blinky = Ghost("Blinky", "angry", 4, "red", random.randint(21, 40), "m", 0) # blinky/red ghost
+blinky = Ghost("Blinky", "chaser", 4, "red", random.randint(21, 40), "m", 0) # blinky/red ghost
+pinky = Ghost("Pinky", "ambusher", 4, "pink", random.randint(1, 20), "m", 0) # pinky/pink ghost
+
 coin_list = []
 for i in range(81, 101, 1): # creates 20 coins on lower lines
     coin_clone = Coins(i, "o", False, "white")
@@ -47,10 +56,11 @@ while True:
         gameBoard.insert(i, "-")
 
     # place objects on gameboard
-    for coin in coin_list:
+    for coin in coin_list: # coins display
         gameBoard[coin.position] = coin.sprite
     gameBoard[pac.position] = pac.sprite # pacman displayed on board
     gameBoard[blinky.position] = blinky.sprite # blinky displayed on board
+    gameBoard[pinky.position] = pinky.sprite # pinky displayed on board
 
     # displays board
     print(f"Score: {score}")
@@ -64,16 +74,20 @@ while True:
         pac.sprite = ">"
         pac.position -= 1
         blinky.mood_behaviour(pac.position)
+        pinky.mood_behaviour(pac.position)
     elif directionalInput == "d":
         pac.sprite = "<"
         pac.position += 1
         blinky.mood_behaviour(pac.position)
+        pinky.mood_behaviour(pac.position)
     elif directionalInput == "w":
         pac.position -= 20
         blinky.mood_behaviour(pac.position)
+        pinky.mood_behaviour(pac.position)
     elif directionalInput == "s":
         pac.position +=20
         blinky.mood_behaviour(pac.position)
+        pinky.mood_behaviour(pac.position)
     else:
         print("Please enter a valid input")
 
