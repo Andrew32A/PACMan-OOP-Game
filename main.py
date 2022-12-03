@@ -47,13 +47,8 @@ while True:
 
     # displays board
     gameBoardDisplay = ''.join(gameBoard) # removes brackets and commas
-    print(gameBoardDisplay[1:20])
-    print(gameBoardDisplay[21:40])
-    print(gameBoardDisplay[41:60])
-    print(gameBoardDisplay[61:80])
-    print(gameBoardDisplay[81:100])
-    print(gameBoardDisplay[101:120])
-    print(gameBoardDisplay[121:140])
+    for i in range(1, 140, 20):
+        print(gameBoardDisplay[-19+i:0+i])
 
     # user input, add w and s for up and down to jump levels later
     directionalInput = input("Input [w] = up, [s] = down, [a] = left, [d] = right: ").lower()
@@ -67,7 +62,6 @@ while True:
         pac.position -= 20
     elif directionalInput == "s":
         pac.position +=20
-    
     else:
         print("Please enter a valid input")
 
