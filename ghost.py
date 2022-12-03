@@ -10,7 +10,7 @@ class Ghost():
         self.position = position
         self.sprite = sprite
 
-    def mood_behaviour(self):
+    def mood_behaviour(self, pac_position):
         '''
         depending on mood, modify coin level/movement
         color: red, name: blinky, personality: chaser
@@ -19,6 +19,23 @@ class Ghost():
         color: orange, name: clyde, personality: feigned ignorance
         '''
         if self.color == "red":
+            distance_between = self.position - pac_position
+            if distance_between >= 20:
+                self.position -= 20
+                return self.position
+            elif distance_between <= 20:
+                self.position += 20
+                return self.position
+            elif distance_between >= 1:
+                self.position -= 1
+                return self.position
+            elif distance_between <= 1:
+                self.position += 1
+                return self.position
+
+            
+
+
             self.position += random.randint(1, self.speed) # modifies movement on board index from between 1 and speed
             return self.position
         elif self.color == "pink":

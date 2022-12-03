@@ -1,7 +1,9 @@
 import random
 
 class Coins():
-    def __init__(self, isSuperCoin=False, color="yellow"):
+    def __init__(self, position, sprite, isSuperCoin=False, color="yellow"):
+        self.position = position
+        self.sprite = sprite
         self.isSuperCoin = isSuperCoin
         self.color = color
 
