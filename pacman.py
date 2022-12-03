@@ -14,5 +14,12 @@ class Pacman(Character):
         added_coin = Coins.add_coin(100)
         pass
 
-hero = Pacman("bob", 100, "happy")
-hero.eat()
+    def respawn(self):
+        '''
+        reset game after game over
+        '''
+
+
+if __name__ == "__main__":
+    hero = Pacman("bob", 100, "happy")
+    hero.eat()
