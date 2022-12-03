@@ -1,10 +1,12 @@
 from character import Character
 from coin import Coins
 
-class Pacman(Character):
-    def __init__(self, name, gender, coin_level=0):
-        super().__init__(name, coin_level)
+class Pacman(): # removed inheritance for now
+    def __init__(self, name, gender, position, sprite, coin_level=0):
+        # super().__init__(name, coin_level)
         self.gender = gender
+        self.position = position
+        self.sprite = sprite
         pass
 
     def gender_behaviour(self):
