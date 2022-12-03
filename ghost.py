@@ -1,4 +1,5 @@
 from character import Character
+import random
 
 class Ghost():
     def __init__(self, name, mood, speed, color, position, sprite, coin_level=0):
@@ -18,7 +19,8 @@ class Ghost():
         color: orange, name: clyde, personality: feigned ignorance
         '''
         if self.color == "red":
-            ...
+            self.position += random.randint(1, self.speed) # modifies movement on board index from between 1 and speed
+            return self.position
         elif self.color == "pink":
             ...
         elif self.color == "cyan":

@@ -30,7 +30,7 @@ m = ghosts
 
 # instantiate objects
 pac = Pacman("Pacman", "male", 70, "<", 0)
-blinky = Ghost("Blinky", "angry", 2, "red", random.randint(21, 40), "m", 0)
+blinky = Ghost("Blinky", "angry", 4, "red", random.randint(21, 40), "m", 0)
 
 
 
@@ -55,13 +55,17 @@ while True:
     if directionalInput == "a":
         pac.sprite = ">"
         pac.position -= 1
+        blinky.mood_behaviour()
     elif directionalInput == "d":
         pac.sprite = "<"
         pac.position += 1
+        blinky.mood_behaviour()
     elif directionalInput == "w":
         pac.position -= 20
+        blinky.mood_behaviour()
     elif directionalInput == "s":
         pac.position +=20
+        blinky.mood_behaviour()
     else:
         print("Please enter a valid input")
 
