@@ -22,7 +22,13 @@ class Ghost(Character):
         '''
         if self.color == "red":
             # distance_between = self.position - pac_position
-            if self.position > pac_position:
+            if (self.position - pac_position) >= 20:
+                self.position -= 20
+                return self.position
+            elif (self.position - pac_position) <= -20:
+                self.position += 20
+                return self.position
+            elif self.position > pac_position:
                 self.position -= 1
                 return self.position
             elif self.position < pac_position:
