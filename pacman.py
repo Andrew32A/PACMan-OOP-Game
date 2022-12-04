@@ -1,9 +1,9 @@
 from character import Character
 from coin import Coins
 
-class Pacman(): # removed inheritance for now
+class Pacman(Character): # removed inheritance for now
     def __init__(self, name, gender, position, sprite, coin_level=0):
-        # super().__init__(name, coin_level)
+        super().__init__(name, coin_level, position)
         self.gender = gender
         self.position = position
         self.sprite = sprite

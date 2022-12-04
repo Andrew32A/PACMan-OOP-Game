@@ -1,10 +1,9 @@
 from coin import Coins
 
 class Character:
-    def __init__ (self, name, coin_level, speed, position):
+    def __init__ (self, name, coin_level, position):
         self.name = name
         self.coin_level = coin_level
-        self.speed = speed
         self.position = position
 
     def move(self):

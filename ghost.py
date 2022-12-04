@@ -1,14 +1,16 @@
 from character import Character
 import random
 
-class Ghost():
+class Ghost(Character):
     def __init__(self, name, mood, speed, color, position, sprite, coin_level=0):
-        # super().__init__(name, coin_level, speed) # removed inherit for now
+        super().__init__(name, coin_level, position)
+        self.name = name
         self.mood = mood
         self.speed = speed
         self.color = color
         self.position = position
         self.sprite = sprite
+        self.coin_level = coin_level
 
     def mood_behaviour(self, pac_position):
         '''
@@ -33,12 +35,9 @@ class Ghost():
             #     self.position += 1
             #     return self.position
 
-            
-
-
             self.position += random.randint(1, self.speed) # modifies movement on board index from between 1 and speed
             return self.position
-            
+
         elif self.color == "pink":
             if self.position > pac_position:
                 self.position -= 1
