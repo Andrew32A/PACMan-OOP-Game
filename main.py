@@ -13,7 +13,6 @@ ENDC = '\033[0m'
 
 os.system("clear") # clears terminal upon execution
 gameBoard = []
-score = 0
 
 """
 gameboard will look something like:
@@ -42,7 +41,7 @@ blinky = Ghost("Blinky", "chaser", "red", random.randint(21, 40), "m", 0) # blin
 pinky = Ghost("Pinky", "ambusher", "pink", random.randint(1, 20), "m", 0) # pinky/pink ghost
 
 coin_list = []
-for i in range(81, 101, 1): # creates 20 coins on lower lines
+for i in range(84, 99, 1): # creates 20 coins on lower lines
     coin_clone = Coins(i, "o", False, "white")
     coin_list.append(coin_clone)
 
@@ -67,7 +66,7 @@ while True:
     gameBoard[pinky.position] = pinky.sprite # pinky displayed on board
 
     # displays board
-    print(f"Score: {score}")
+    print(f"Score: {pac.coin_level}")
     gameBoardDisplay = ''.join(gameBoard) # removes brackets and commas
     for i in range(1, 140, 20):
         print(gameBoardDisplay[-19+i:0+i])
@@ -90,6 +89,10 @@ while True:
         ghost_display()
     else:
         print("Please enter a valid input")
+
+    # checks if pacman collides with a coin, delete the coin and add to pac's score
+    pac.pick_up_coin(coin_list)
+        
 
     os.system("clear")
 

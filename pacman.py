@@ -9,6 +9,12 @@ class Pacman(Character): # removed inheritance for now
         self.sprite = sprite
         pass
 
+    def pick_up_coin(self, coin_list):
+       for coin in coin_list:
+        if self.position == coin.position:
+            self.coin_level += 10
+            return coin_list.remove(coin)
+
     def gender_behaviour(self):
         '''
         depending on gender, modify coin level
