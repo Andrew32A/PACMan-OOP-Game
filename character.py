@@ -2,11 +2,11 @@ from coin import Coins
 
 class Character:
     def __init__ (self, name, coin_level, position):
-        self.name = name
-        self.coin_level = coin_level
-        self.position = position
+        self.name = name # public
+        self.coin_level = coin_level # public
+        self.position = position # public
 
-    def move(self, movement_direction):
+    def move(self, movement_direction): # public
         """
         either calculate positioning on a grid or create a battler that fights another object
         """
@@ -23,20 +23,20 @@ class Character:
             self.position += 20
             return self.position
 
-    def eat(self, enemy):
+    def eat(self, enemy): # unclassified for now since this is unfinished
         if self.coin_level > enemy.coin_level:
             print(f"{self.name} ate {enemy.name}")
         else:
             print(f"{enemy.name} ate {self.name}")
 
-    def get_coins(self):
+    def get_coins(self): # unclassified for now since this is unfinished
         """
         method takes in instance of coin class to generate random amounts of coins
         """
         self.coin_level = Coins.add_coin(self) - Coins.subtract_coin(self) #insert coins generated from coin.py
         return self.coin_level
 
-    def show_coins(self):
+    def show_coins(self): # unclassified for now since this is unfinished
         """
         might be a little redundant since get_coins returns coin amount
         """

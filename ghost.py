@@ -3,12 +3,12 @@ from character import Character
 class Ghost(Character):
     def __init__(self, name, mood, color, position, sprite, coin_level=0):
         super().__init__(name, coin_level, position)
-        self.name = name
-        self.mood = mood
-        self.color = color
-        self.position = position
-        self.sprite = sprite
-        self.coin_level = coin_level
+        self._name = name # protected
+        self._mood = mood # protected
+        self.color = color # public
+        self._position = position # public
+        self.sprite = sprite # public
+        self.__coin_level = coin_level # private, mostly because it's unused
 
         '''
         depending on mood, modify coin level/movement
@@ -18,7 +18,7 @@ class Ghost(Character):
         color: orange, name: clyde, personality: feigned ignorance
         '''
 
-    def blinky_movement(self, pac_position):
+    def __blinky_movement(self, pac_position): # private
         if (self.position - pac_position) >= 20:
             self.position -= 20
             return self.position
@@ -32,7 +32,7 @@ class Ghost(Character):
             self.position += 1
             return self.position
 
-    def pinky_movement(self, pac_position):
+    def __pinky_movement(self, pac_position): # private
         if self.position > pac_position:
             self.position -= 1
             return self.position
@@ -40,12 +40,12 @@ class Ghost(Character):
             self.position += 1
             return self.position
 
-    def move(self, pac_position):
+    def _move(self, pac_position): # protected
         if self.color == "red":
-            self.blinky_movement(pac_position)
+            self.__blinky_movement(pac_position)
 
         elif self.color == "pink":
-            self.pinky_movement(pac_position)
+            self.__pinky_movement(pac_position)
 
         elif self.color == "cyan":
             ...

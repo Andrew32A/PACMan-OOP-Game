@@ -49,8 +49,8 @@ superCoin = Coins(True, "yellow")
 
 # helper function to DRY code
 def ghost_display():
-    blinky.move(pac.position)
-    pinky.move(pac.position)
+    blinky._move(pac.position)
+    pinky._move(pac.position)
 
 # game loop
 while True:
@@ -91,7 +91,7 @@ while True:
         print("Please enter a valid input")
 
     # checks if pacman collides with ghost, ends game if true
-    if (pac.is_alive(blinky.position, pinky.position)):
+    if (pac._is_alive(blinky.position, pinky.position)):
         os.system("clear")
         gameBoard = f"""
         ---------- Game over ----------\n
@@ -101,7 +101,7 @@ while True:
         break
 
     # checks if pacman collides with a coin, delete the coin and add to pac's score
-    pac.pick_up_coin(coin_list)
+    pac._pick_up_coin(coin_list)
         
 
     os.system("clear")
