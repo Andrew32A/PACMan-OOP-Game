@@ -39,8 +39,8 @@ m = ghosts
 
 # instantiate objects
 pac = Pacman("Pacman", "male", 70, "<", 0) # pacman
-blinky = Ghost("Blinky", "chaser", 4, "red", random.randint(21, 40), "m", 0) # blinky/red ghost
-pinky = Ghost("Pinky", "ambusher", 4, "pink", random.randint(1, 20), "m", 0) # pinky/pink ghost
+blinky = Ghost("Blinky", "chaser", "red", random.randint(21, 40), "m", 0) # blinky/red ghost
+pinky = Ghost("Pinky", "ambusher", "pink", random.randint(1, 20), "m", 0) # pinky/pink ghost
 
 coin_list = []
 for i in range(81, 101, 1): # creates 20 coins on lower lines
@@ -73,21 +73,21 @@ while True:
     if directionalInput == "a":
         pac.sprite = ">"
         pac.position -= 1
-        blinky.mood_behaviour(pac.position)
-        pinky.mood_behaviour(pac.position)
+        blinky.move(pac.position)
+        pinky.move(pac.position)
     elif directionalInput == "d":
         pac.sprite = "<"
         pac.position += 1
-        blinky.mood_behaviour(pac.position)
-        pinky.mood_behaviour(pac.position)
+        blinky.move(pac.position)
+        pinky.move(pac.position)
     elif directionalInput == "w":
         pac.position -= 20
-        blinky.mood_behaviour(pac.position)
-        pinky.mood_behaviour(pac.position)
+        blinky.move(pac.position)
+        pinky.move(pac.position)
     elif directionalInput == "s":
         pac.position +=20
-        blinky.mood_behaviour(pac.position)
-        pinky.mood_behaviour(pac.position)
+        blinky.move(pac.position)
+        pinky.move(pac.position)
     else:
         print("Please enter a valid input")
 
