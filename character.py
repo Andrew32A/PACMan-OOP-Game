@@ -6,11 +6,22 @@ class Character:
         self.coin_level = coin_level
         self.position = position
 
-    def move(self):
+    def move(self, movement_direction):
         """
         either calculate positioning on a grid or create a battler that fights another object
         """
-        pass
+        if movement_direction == "a":
+            self.position -= 1
+            return self.position
+        elif movement_direction == "d":
+            self.position += 1
+            return self.position
+        elif movement_direction == "w":
+            self.position -= 20
+            return self.position
+        elif movement_direction == "s":
+            self.position += 20
+            return self.position
 
     def eat(self, enemy):
         if self.coin_level > enemy.coin_level:

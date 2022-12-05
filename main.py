@@ -1,11 +1,10 @@
-from character import Character
 from coin import Coins
 from ghost import Ghost
 from pacman import Pacman
 import os
 import random
 
-# colors
+# colors for later that we can tie into the color attribute to make things look pretty
 OKBLUE = '\033[94m'
 OKCYAN = '\033[96m'
 OKGREEN = '\033[92m'
@@ -49,6 +48,11 @@ for i in range(81, 101, 1): # creates 20 coins on lower lines
 
 superCoin = Coins(True, "yellow")
 
+# helper function to DRY code
+def ghost_display():
+    blinky.move(pac.position)
+    pinky.move(pac.position)
+
 # game loop
 while True:
     # fills board with '-' before being updated with object placement
@@ -72,22 +76,18 @@ while True:
     directionalInput = input("Input [w] = up, [s] = down, [a] = left, [d] = right: ").lower()
     if directionalInput == "a":
         pac.sprite = ">"
-        pac.position -= 1
-        blinky.move(pac.position)
-        pinky.move(pac.position)
+        pac.move(directionalInput)
+        ghost_display()
     elif directionalInput == "d":
         pac.sprite = "<"
-        pac.position += 1
-        blinky.move(pac.position)
-        pinky.move(pac.position)
+        pac.move(directionalInput)
+        ghost_display()
     elif directionalInput == "w":
-        pac.position -= 20
-        blinky.move(pac.position)
-        pinky.move(pac.position)
+        pac.move(directionalInput)
+        ghost_display()
     elif directionalInput == "s":
-        pac.position +=20
-        blinky.move(pac.position)
-        pinky.move(pac.position)
+        pac.move(directionalInput)
+        ghost_display()
     else:
         print("Please enter a valid input")
 
