@@ -22,10 +22,16 @@ class Pacman(Character): # removed inheritance for now
         added_coin = Coins.add_coin(100)
         pass
 
-    def respawn(self):
+    def is_alive(self, ghost1_position, ghost2_position):
         '''
         reset game after game over
         '''
+        if self.position == ghost1_position:
+            return True
+        elif self.position == ghost2_position:
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
