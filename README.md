@@ -32,8 +32,8 @@ Pacman/
 <div align="center">
   
 ## Diagram of Class Inheritance 
+<img width="975" alt="Screen Shot 2022-12-05 at 3 43 27 PM" src="https://user-images.githubusercontent.com/93098869/205739318-e1235100-778a-4f82-a78e-fbe521e2a023.png">
 
-<img width="1009" alt="Screen Shot 2022-11-30 at 6 53 45 PM" src="https://user-images.githubusercontent.com/93098869/204934501-31016072-395e-4b98-9fe2-2f8356a856d1.png">
 </div>
 
 ## Features
