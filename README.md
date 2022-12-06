@@ -23,10 +23,10 @@
 ```sh
 Pacman/
 ├── character.py         # Character class: Parent class
-├── pacman.py # Pacman class that inherits from parent
-├── ghost.py # Ghost class that inherits from parent
-├── coin.py # Coin class that is passed into other classes to increase coin levels.
-├── main.py        # Main File that runs the game
+├── pacman.py            # Pacman class that inherits from parent
+├── ghost.py             # Ghost class that inherits from parent
+├── coin.py              # Coin class that is passed into other classes to increase coin levels.
+├── main.py              # Main File that runs the game
 ```
 
 <div align="center">
